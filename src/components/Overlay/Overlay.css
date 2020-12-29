@@ -1,0 +1,44 @@
+.Overlay {
+  width: 300px;
+  border: 10px solid #fff;
+  border-radius: 3px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  z-index: -10;
+
+  transition: opacity 0.2s ease-out; 
+}
+
+.Overlay img {
+  width: 300px;
+}
+
+.Overlay p {
+  background-color: #fff;
+  font-style: italic;
+  margin: 0;
+  margin-top: -4px;
+  margin-bottom: -1px;
+  padding: 0;
+}
+
+.showing {
+  opacity: 1;
+  z-index: 1;
+
+  transition: opacity 0.4s ease-in;
+}
+
+@media only screen and (max-width: 600px) {
+  .Overlay {
+    width: 200px;
+  }
+
+  .Overlay img{
+    width: 200px;
+  }
+}
