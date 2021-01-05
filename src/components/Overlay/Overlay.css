@@ -1,5 +1,7 @@
 .Overlay {
-  width: 300px;
+  position: relative;
+  max-height: 470px;
+  max-width: 450px;
   border: 10px solid #fff;
   border-radius: 3px;
   position: fixed;
@@ -7,22 +9,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+  background-color: #fff;
   opacity: 0;
   z-index: -10;
 
-  transition: opacity 0.2s ease-out; 
+  transition: all 0.4s ease-out;
 }
 
-.Overlay img {
-  width: 300px;
+.Overlay-img {
+  max-height: 450px;
+  max-width: 450px;
 }
 
 .Overlay p {
   background-color: #fff;
   font-style: italic;
-  margin: 0;
-  margin-top: -4px;
-  margin-bottom: -1px;
   padding: 0;
 }
 
@@ -30,15 +31,65 @@
   opacity: 1;
   z-index: 1;
 
-  transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-out;
+}
+
+.fading {
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease-out;
+}
+
+.Overlay-back-icon,
+.Overlay-forward-icon,
+.Overlay-back-btn,
+.Overlay-forward-btn {
+  position: absolute;
+  top: 43%;
+}
+
+.Overlay-back-icon,
+.Overlay-forward-icon {
+  color: #ffff;
+  top: 3px;
+  opacity: 1;
+}
+
+.Overlay-back-btn,
+.Overlay-forward-btn {
+  width: 25px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  outline-color: #fff;
+}
+
+.Overlay-back-icon,
+.Overlay-back-btn {
+  left: 3px;
+}
+
+.Overlay-forward-icon {
+  right: -3px;
+}
+
+.Overlay-forward-btn {
+  right: 3px;
+}
+
+.disabled {
+  color: #ccc;
 }
 
 @media only screen and (max-width: 600px) {
   .Overlay {
-    width: 200px;
+    max-width: 370px;
+    max-height: 370px;
   }
 
-  .Overlay img{
-    width: 200px;
+  .Overlay img {
+    max-width: 370px;
+    max-height: 350px;
   }
 }

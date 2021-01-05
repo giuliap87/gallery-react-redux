@@ -5,7 +5,8 @@ import App from "./App";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import reducer from "./reducers/reducer";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducers/index";
 import {
   loadStateFromLocalStorage,
   saveStateToLocalStorage,
@@ -14,12 +15,15 @@ import {
 import throttle from "lodash/throttle";
 
 const persistedState = loadStateFromLocalStorage();
-const store = createStore(reducer, persistedState);
+
+const store = createStore(rootReducer, persistedState, composeWithDevTools());
+console.log(store.getState());
 
 store.subscribe(
   throttle(() => {
-    saveStateToLocalStorage(store.getState());
-    //??? {grayscaleLevel: store.getState().grayscaleLevel} 
+    saveStateToLocalStorage({
+      filterReducer: store.getState().filterReducer,
+    });
   }, 1000)
 );
 

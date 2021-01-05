@@ -4,7 +4,10 @@ import "../PicturesContainer.css";
 
 function Card({ alt, src, id }) {
   const [span, setSpan] = useState(0);
-  const grayscaleLevel = useSelector((state) => state.grayscaleLevel);
+  const grayscaleLevel = useSelector((state) => state.filterReducer.grayscaleLevel);
+  const brightnessLevel = useSelector((state) => state.filterReducer.brightnessLevel);
+  const saturationLevel = useSelector((state) => state.filterReducer.saturationLevel);
+  const sepiaLevel = useSelector((state) => state.filterReducer.sepiaLevel);
 
   const cardReference = useRef(null);
 
@@ -16,7 +19,7 @@ function Card({ alt, src, id }) {
 
   function setSpans() {
     const height = cardReference.current.clientHeight;
-    const spans = height / 10 + 1;
+    const spans = Math.ceil(height / 10) + 1;
     setSpan(spans);
   }
 
@@ -27,7 +30,10 @@ function Card({ alt, src, id }) {
         alt={alt}
         src={src}
         id={id}
-        style={{ cursor: "pointer", filter: `grayscale(${grayscaleLevel})` }}
+        style={{
+          cursor: "pointer",
+          filter: `grayscale(${grayscaleLevel}) brightness(${brightnessLevel}) saturate(${saturationLevel}) sepia(${sepiaLevel})`,
+        }}
         onClick={(e) => dispatch({ type: "DISPLAY_PICTURE", id: e.target.id })}
       ></img>
     </div>

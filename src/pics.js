@@ -1,13 +1,13 @@
-import chair from "./images/chair.jpg";
-import kitchen from "./images/kitchen.jpg";
-import lamp from "./images/lamp.jpg";
-import plants from "./images/plants.jpg";
-import table from "./images/table.jpg";
-import livingroom from "./images/livingroom.jpg";
-import furniture from "./images/furniture.jpg";
-import clothes from "./images/clothes.jpg";
-import bookshelf from "./images/bookshelf.jpg";
-import dishes from "./images/dishes.jpg";
+import chair from "./images/resized imgs/chair.jpg";
+import kitchen from "./images/resized imgs/kitchen.jpg";
+import lamp from "./images/resized imgs/lamp.jpg";
+import plants from "./images/resized imgs/plants.jpg";
+import table from "./images/resized imgs/table.jpg";
+import livingroom from "./images/resized imgs/livingroom.jpg";
+import furniture from "./images/resized imgs/furniture.jpg";
+import clothes from "./images/resized imgs/clothes.jpg";
+import bookshelf from "./images/resized imgs/bookshelf.jpg";
+import dishes from "./images/resized imgs/dishes.jpg";
 
 const pics = [
   {
