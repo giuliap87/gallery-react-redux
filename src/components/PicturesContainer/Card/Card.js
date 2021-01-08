@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import "../PicturesContainer.css";
 
 function Card({ alt, src, id }) {
   const [span, setSpan] = useState(0);
