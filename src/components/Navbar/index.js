@@ -87,7 +87,7 @@ function Navbar() {
         }
         valueLabelDisplay="auto"
         step={0.5}
-        min={-5}
+        min={0}
         max={5}
         marks
       />
