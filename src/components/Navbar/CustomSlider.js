@@ -1,22 +1,9 @@
 import React from "react";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({
-  root: {
-    padding: "10px 10px 0 20px",
-    width: "10%",
-  },
-  label: {
-    fontSize: 15,
-  },
-  "@media screen and (max-width: 600px)": {
-    label: {
-      fontSize: 12,
-    },
-  },
-});
+import useStyles from "../../styles/CustomSliderStyle";
 
 const CustomSlider = withStyles({
   root: {
@@ -72,7 +59,7 @@ const CustomSlider = withStyles({
         height: "20px",
         width: "20px",
         lineHeight: "20px",
-        fontSize: 10
+        fontSize: 10,
       },
     },
   },

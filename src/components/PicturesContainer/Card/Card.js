@@ -3,10 +3,19 @@ import { useSelector, useDispatch } from "react-redux";
 
 function Card({ alt, src, id }) {
   const [span, setSpan] = useState(0);
-  const grayscaleLevel = useSelector((state) => state.filterReducer.grayscaleLevel);
-  const brightnessLevel = useSelector((state) => state.filterReducer.brightnessLevel);
-  const saturationLevel = useSelector((state) => state.filterReducer.saturationLevel);
+  const grayscaleLevel = useSelector(
+    (state) => state.filterReducer.grayscaleLevel
+  );
+  const brightnessLevel = useSelector(
+    (state) => state.filterReducer.brightnessLevel
+  );
+  const saturationLevel = useSelector(
+    (state) => state.filterReducer.saturationLevel
+  );
   const sepiaLevel = useSelector((state) => state.filterReducer.sepiaLevel);
+  // const currentPic = useSelector(
+  //   (state) => state.galleryReducer.currentPictureId
+  // );
 
   const cardReference = useRef(null);
 
@@ -29,6 +38,13 @@ function Card({ alt, src, id }) {
         alt={alt}
         src={src}
         id={id}
+        // style={
+        //   currentPic === id
+        //     ? {
+        //         filter: `grayscale(${grayscaleLevel}) brightness(${brightnessLevel}) saturate(${saturationLevel}) sepia(${sepiaLevel})`,
+        //       }
+        //     : null
+        // }
         style={{
           cursor: "pointer",
           filter: `grayscale(${grayscaleLevel}) brightness(${brightnessLevel}) saturate(${saturationLevel}) sepia(${sepiaLevel})`,

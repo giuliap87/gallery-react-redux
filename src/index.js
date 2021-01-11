@@ -17,7 +17,6 @@ import throttle from "lodash/throttle";
 const persistedState = loadStateFromLocalStorage();
 
 const store = createStore(rootReducer, persistedState, composeWithDevTools());
-console.log(store.getState());
 
 store.subscribe(
   throttle(() => {
